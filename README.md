@@ -8,64 +8,82 @@ It is designed as a hands-on practice project for improving SQL skills, especial
 
 ## 🚀 Project Objectives
 
-- Detect fraudulent transactions
-- Analyze transaction behavior over time
-- Identify suspicious patterns (e.g., zero balance anomalies)
-- Practice advanced SQL concepts like:
-  - CTEs (Common Table Expressions)
-  - Recursive queries
-  - Window functions
-  - Joins & aggregations
+* Detect fraudulent transactions
+* Analyze transaction behavior over time
+* Identify suspicious patterns (e.g., zero balance anomalies)
+* Practice advanced SQL concepts like:
+
+  * CTEs (Common Table Expressions)
+  * Recursive queries
+  * Window functions
+  * Joins & aggregations
 
 ---
 
 ## 📊 Dataset
 
-The dataset contains transaction-level data with fields such as:
+The dataset used in this project is taken from Kaggle:
 
-- `nameOrig` – Sender account
-- `nameDest` – Receiver account
-- `amount` – Transaction amount
-- `type` – Transaction type (TRANSFER, CASH_OUT, etc.)
-- `oldbalanceOrg`, `newbalanceOrig`
-- `oldbalanceDest`, `newbalanceDest`
-- `isFlaggedFraud` – Fraud indicator
+🔗 https://www.kaggle.com/datasets/ealaxi/paysim1
+
+It contains transaction-level data with fields such as:
+
+* `nameOrig` – Sender account
+* `nameDest` – Receiver account
+* `amount` – Transaction amount
+* `type` – Transaction type (TRANSFER, CASH_OUT, etc.)
+* `oldbalanceOrg`, `newbalanceOrig`
+* `oldbalanceDest`, `newbalanceDest`
+* `isFlaggedFraud` – Fraud indicator
 
 ---
 
 ## 🧠 Key SQL Tasks Covered
 
 ### 1. Detect Recursive Fraud Chains
+
 Identify multi-step money transfers across accounts using recursive CTEs.
 
 ### 2. Analyze Fraud Over Time
+
 Calculate rolling sums of fraudulent transactions using window functions.
 
 ### 3. Large Suspicious Transfers
+
 Filter high-value transfers combined with unusual balance behavior.
 
 ### 4. No Balance Change Detection
+
 Detect cases where balances remain unchanged after transactions.
 
 ### 5. Zero Balance Transactions
+
 Find transactions where the destination account had zero balance before or after.
 
 ---
 
 ## 🛠️ SQL Concepts Used
 
-- WITH (CTE)
-- Recursive CTE
-- INNER JOIN
-- USING vs ON
-- Window Functions (`SUM OVER`)
-- Filtering & Conditions
+* WITH (CTE)
+* Recursive CTE
+* INNER JOIN
+* ON
+* Window Functions (`SUM OVER`)
+* Filtering & Conditions
 
 ---
 
-## 💡 Sample Query
+## 📈 Learning Outcome
 
-```sql
-SELECT *
-FROM transactions
-WHERE oldbalanceDest = 0 OR newbalanceDest = 0;
+This project helped in:
+
+* Strengthening SQL problem-solving skills
+* Understanding real-world fraud detection logic
+* Preparing for data analyst interviews
+* Applying SQL in fintech scenarios
+
+---
+
+## ⭐ Support
+
+If you find this project helpful, give it a ⭐ on GitHub!
